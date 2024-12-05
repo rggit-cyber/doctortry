@@ -8,32 +8,27 @@ class ExtraWidget extends StatefulWidget {
 
 class _ExtraWidgetState extends State<ExtraWidget> {
   // @override
-  var c=0;
-    void lw(){
-   
-  setState((){
-    c++;
-       print(c);
-  });
-}
+  var c = 0;
+  void lw() {
+    setState(() {
+      c++;
+      print(c);
+    });
+  }
+
   Widget build(BuildContext context) {
-   
     return Column(
       children: [
-        Container(
-          child: Text('c= $c')),
+        Text('c= $c'),
         ElevatedButton(
           onPressed: lw,
-         child: Text("button"),
+          child: Text("button"),
         ),
         ElevatedButton(
-          onPressed:()=> Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context)=>NextPage(context,c))),
-         child: Text("Next page  button"))
+            onPressed: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => NextPage(context, c))),
+            child: Text("Next page  button"))
       ],
     );
   }
 }
-
